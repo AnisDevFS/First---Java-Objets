@@ -63,7 +63,9 @@ public class Trottinette {
 		this.prix = prix;
 	}
 	
-	
+	public static void changerCouleurVoiture(Voiture voiture, String couleur) {
+		voiture.setCouleur(couleur);
+	}
 	
 	
 

@@ -10,6 +10,7 @@ public class Test {
 		System.out.println(bmw.toString());
 		
 		bmw.setCouleur("rouge");
+		Trottinette.changerCouleurVoiture(bmw, "Vert");
 		System.out.println("after SetCouleur");
 		System.out.println(bmw.getMarque());
 		Voiture clio = new Voiture("Clio 4", "rouge", 220, 4000f);
