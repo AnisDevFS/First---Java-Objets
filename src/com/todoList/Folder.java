@@ -56,10 +56,14 @@ public class Folder {
 //	Ex 5 : Une méthode de folder qui permet d’afficher toutes ses tasks
 
 	public void displayAllTasks() {
-		
-		for (Task task : this.tasks) {
+		if (this.tasks != null) {
+
+			for (Task task : this.tasks) {
+			if (task != null)
 			System.out.println(task.getDesignation());
 		}
+		}
+
 	}
 	
 	

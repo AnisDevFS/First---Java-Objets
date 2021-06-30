@@ -19,6 +19,7 @@ public class Test {
 		
 		System.out.println(anis.getFolders());
 		anis.addFolder(coursesF);
+		anis.addFolder(projetF);
 		anis.addFolder("courses Nom du dossier String");
 		System.out.println(anis.getFolders());
 		
@@ -29,19 +30,25 @@ public class Test {
 		
 		System.out.println("---------------");
 		Task laitTache = new Task(1, "acheter du lait chez carrefour");
+		Task concept = new Task(22, "Conception de mon projet Angular");
 		
 		anis.addTaskInFolder(laitTache, "courses");
+		anis.addTaskInFolder(concept, "Projet Ng");
 		System.out.println(anis.getFolders().get(0).getTasks());
 		
 		System.out.println("---------------");
 		coursesF.displayAllTasks();
 		
+		System.out.println("---------------");
+		anis.displayAllTasks();
 		
 		
 		
-		
-		
-		
+		System.out.println("---------------");
+		anis.displayAllTasks();
+		System.out.println("----after final Method------");
+		anis.addTasksInAFolder("réparer ordinateur", 2);
+		anis.displayAllTasks();
 		
 		
 		

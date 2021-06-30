@@ -1,6 +1,7 @@
 package com.todoList;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class User {
 
@@ -138,6 +139,58 @@ public class User {
 	
 	
 	
+	// Ex 5 - bis :	Une méthode dans User qui permet d’afficher toutes ses tasks
+	
+	public void displayAllTasks() {
+		
+		for (Folder folder : this.folders) {
+			
+			if(folder != null)
+			folder.displayAllTasks();
+		}
+	}
+	
+	
+	
+//	Ex 6 :	Une méthode qui permet à l’User de rajouter plusieurs Task dans un folder 
+//	en passant le nom du Folder et le nombre de tasks à rajouter (Scanner)
+//	Si le nom du folder n’existe pas Alors la méthode doit être capable de créer un nouveau folder
+	
+	public void addTasksInAFolder (String folderName, int tasksNumber) {
+		
+		boolean folderExist = false; int indexOfFolder = -1;
+		if (this.folders != null) {
+			
+				for (int i = 0 ; i < this.folders.size() ; i++) {
+					
+					if (this.folders.get(i).getName().equals(folderName)) {
+						folderExist = true;
+						indexOfFolder = i ;
+					}
+				}
+		}
+		
+		if (!folderExist) {
+			
+			ArrayList<Task> listOfTasks = new ArrayList<Task>();
+			Folder newFolder = new Folder(1, folderName, listOfTasks);
+			indexOfFolder = this.folders.size();
+			this.folders.add(newFolder);
+		}
+			
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("vous avez " + tasksNumber + " taches à ajouter dans le dossier " +
+		this.folders.get(indexOfFolder).getName());
+		
+		for (int i = 0 ; i < tasksNumber ; i++ ) {
+			System.out.println("taches num "+ (i+1) + "  -");
+			String TaskName = sc.nextLine();
+			Task t = new Task(this.folders.get(indexOfFolder).getTasks().size() + 1, TaskName);
+			this.folders.get(indexOfFolder).getTasks().add(t);
+		}
+
+	}
 	
 	
 	
