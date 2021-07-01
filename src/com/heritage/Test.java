@@ -13,7 +13,14 @@ public class Test {
 		ce.description();
 		c.description();
 		System.out.println(cc.getDecouvert());
+		afficheSolde(c);
+		afficheSolde(ce);
+		afficheSolde(cc1);
 		
+	}
+	
+	public static void afficheSolde (Compte c) {
+		System.out.println(c.getSolde());
 	}
 
 }
