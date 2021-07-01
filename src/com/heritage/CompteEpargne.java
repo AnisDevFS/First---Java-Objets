@@ -42,5 +42,44 @@ public class CompteEpargne extends Compte {
 		System.out.println(", taux=" + this.tauxInteret +
 		", plafond=" + this.plafond +"]");
 	}
+	
+	
+	
+//	Ex 2 : Dons le cas d'un compte d'épargne si j'envoie de l'argent à un autre compte 
+//	d'épargne je dois tester son plafond
+	
+	public void virerArgent(Compte dest, float montant) {
+		
+		boolean plafondOk = true;
+		
+		if (dest.getClass().getName().equals("com.heritage.CompteEpargne")) {
+	//	if (dest.getClass().equals(this.getClass())) {
+	//	if (dest instanceof CompteEpargne) {
+			
+			if ((dest.getSolde() + montant) > ((CompteEpargne)dest).getPlafond()) {
+				 plafondOk = false;
+			}
+		}
+		
+		if (this.solde >= montant && plafondOk) {
+			
+			this.transferer(dest, montant);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

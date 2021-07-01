@@ -49,5 +49,23 @@ public class Compte {
 		this.solde -= montant;
 		destinataire.setSolde(destinataire.getSolde() + montant);
 	}
+	
+	
+
+	
+	
+//	Ex 1 : Pour la méthode virer argent donc content je ne peux pas accepter les virements d'un montant
+//	inférieur à 500€ et je considère que je n'ai pas de découvert (pas de conditions supplémentaires même 
+//	si j’envoie vers un compte d’épargne)	
+	public void virerArgent(Compte dest, float montant) {
+		if (this.solde >= montant && montant >= 500) {
+			
+			this.transferer(dest, montant);
+		}
+	}
+	
+	
+	
+	
 
 }

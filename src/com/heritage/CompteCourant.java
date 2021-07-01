@@ -25,5 +25,38 @@ public class CompteCourant extends Compte {
 				", solde=" + this.solde +
 				", découvert=" + this.decouvert +"]");
 	}
+	
+	
+	
+	
+//	Ex 3 : Dans le cadre d'un compte courant si j'envoie de l'argent un compte d'épargne je dois
+//	tester son plafond et la solvabilité composée par le solde et le découvert
+	public void virerArgent(Compte dest, float montant) {
+		
+		boolean plafondOk = true;
+
+		if (dest instanceof CompteEpargne) {
+			
+			if ((dest.getSolde() + montant) > ((CompteEpargne)dest).getPlafond()) {
+				 plafondOk = false;
+			}
+		}
+		
+		if ((this.solde + this.decouvert) >= montant && plafondOk) {
+			
+			this.transferer(dest, montant);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
