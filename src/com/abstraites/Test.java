@@ -6,7 +6,7 @@ public class Test {
 		
 		Personne p = new SuperProf();
 		p.marcher();
-		((SuperProf) p).ensigner();
+		((Prof) p).ensigner();
 
 	}
 
