@@ -18,7 +18,37 @@ public class Test {
 			Context cxt = new Context(employe, resident);
 			cxt.execute();
 		}
+		System.out.println("------------");
+		
+		
+		int i = 5;
+		Class iClass = int.class;
+		System.out.println(iClass.getName());
+		System.out.println(iClass.isPrimitive());
+		System.out.println(((Object)i).getClass().getSimpleName());
+		System.out.println(((Object)i).getClass().isPrimitive());
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
