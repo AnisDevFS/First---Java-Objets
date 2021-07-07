@@ -2,11 +2,23 @@ package com.interfaces.exercice.residence;
 
 public interface Employe {
 	
-	void declarerHTravail(int nombreHeures);
+	static void negocierContrat() {
+		System.out.println("Je suis EMployé et je négocie mon contrat");
+	}
 	
-	void negocierContrat();
+	default void declarerHTravail(int nombreHeures) {
+		System.out.println(this.getClass().getSimpleName() +
+				" je déclare " + nombreHeures +
+				" heures de travail");
+	}
 	
-	void donnerAvertissement(Resident resident);
+
+	default void donnerAvertissement(Resident resident) {
+		
+		System.out.println(this.getClass().getSimpleName() +
+				" donne avertissement vers" +
+				resident.getNom());
+	}
 	
 	String getNom();
 

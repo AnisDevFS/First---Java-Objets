@@ -14,9 +14,10 @@ public class Test {
 		Resident resident = new Etudiant("Anis" , 30);
 		System.out.println("------------");
 		for (Employe employe : tab) {
-			// employe.donnerAvertissement(resident);
+			 employe.declarerHTravail(6);
 			Context cxt = new Context(employe, resident);
 			cxt.execute();
+			Employe.negocierContrat();
 		}
 		System.out.println("------------");
 		

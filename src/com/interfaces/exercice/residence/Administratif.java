@@ -17,23 +17,6 @@ public class Administratif implements Employe {
 		this.nom = nom;
 	}
 
-	@Override
-	public void declarerHTravail(int nombreHeures) {
-		System.out.println("Administratif je déclare " + nombreHeures +
-				" heures de travail");
-	}
-
-	@Override
-	public void negocierContrat() {
-		System.out.println("Administratif négocie son contrat");
-	}
-
-	@Override
-	public void donnerAvertissement(Resident resident) {
-		
-		System.out.println("Administratif donne avertissement vers" +
-				resident.getNom());
-	}
 	
 	void verserSalaire(Employe emp , float salaire) {
 		

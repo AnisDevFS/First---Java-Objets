@@ -17,25 +17,6 @@ public class VeilleurDeNuit implements Employe {
 		this.nom = nom;
 	}
 
-	@Override
-	public void declarerHTravail(int nombreHeures) {
-		System.out.println("VeilleurDeNuit je déclare " + nombreHeures +
-				" heures de travail");
-	}
-
-	@Override
-	public void negocierContrat() {
-		System.out.println("VeilleurDeNuit négocie son contrat");
-	}
-
-	
-	@Override
-	public void donnerAvertissement(Resident resident) {
-		
-		System.out.println("VeilleurDeNuit donne avertissement vers" +
-				resident.getNom());
-	}
-	
 	void faireTour () {
 		System.out.println("VeilleurDeNuit fait un tour");
 	}
